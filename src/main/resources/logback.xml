@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="appname" value="netcdf-to-csv"/>
+    <contextName>${appname}</contextName>
+
+    <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%contextName] ${HOSTNAME} [%thread] %-5level %logger{36} - %msg %xEx%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="uk.co.informaticslab" level="DEBUG"/>
+
+    <!-- Set default logging level to INFO. Can be changed by launching the app with property -Dlog.level=XXX -->
+    <root level="${log.level:-INFO}">
+        <appender-ref ref="CONSOLE_APPENDER"/>
+    </root>
+
+</configuration>
